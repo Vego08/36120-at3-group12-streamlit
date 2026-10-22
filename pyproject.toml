@@ -1,0 +1,13 @@
+[project]
+name = "at3-crypto-streamlit"
+version = "0.1.0"
+description = "36120 AT3 Group 12: Streamlit front-end of the Cryptocurrency Financial Intelligence Platform"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "streamlit==1.59.0",
+    "pandas==2.2.2",
+    "requests",
+]
+
+[tool.ruff]
+line-length = 110

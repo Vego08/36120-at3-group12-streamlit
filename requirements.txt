@@ -1,0 +1,4 @@
+# Versions pinned by the 36120 AT3 brief where listed
+streamlit==1.59.0
+pandas==2.2.2
+requests
