@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+import altair as alt  # noqa: E402
 import streamlit as st  # noqa: E402
 
 from common.api_client import service_status_table  # noqa: E402
@@ -50,7 +51,13 @@ def home() -> None:
                   f"{(last / prev - 1):+.2%}")
         c2.metric("30-day change", f"{(last / history['close'].iloc[-31] - 1):+.2%}")
         c3.metric("Data up to", history.index[-1].strftime("%Y-%m-%d"))
-        st.line_chart(history["close"].tail(365).rename("Close (USD)"), height=280)
+        price = history["close"].tail(365).rename("close").reset_index()
+        chart = alt.Chart(price).mark_line().encode(
+            x=alt.X("date:T", title=None),
+            y=alt.Y("close:Q", title="Close (USD)", scale=alt.Scale(zero=False)),
+            tooltip=[alt.Tooltip("date:T"), alt.Tooltip("close:Q", format=",.4f")],
+        ).properties(height=280)
+        st.altair_chart(chart, width="stretch")
 
     st.subheader("Market indicators")
     cols = st.columns(2)
