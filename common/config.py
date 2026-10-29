@@ -27,7 +27,8 @@ STUDENTS: dict[str, dict[str, str]] = {
 }
 
 # Fill in each Render URL once deployed (no trailing slash), or set them as secrets.
-DEFAULT_API_URLS: dict[str, str] = {"A": "", "B": "", "C": "", "D": "https://tor-api-student.onrender.com"}
+DEFAULT_API_URLS: dict[str, str] = {"A": "", "B": "", "C": "https://studentc-trend-category-api.onrender.com",
+                                   "D": "https://tor-api-student.onrender.com"}
 
 # Render's free tier sleeps idle services; the first request can take 30 to 60 seconds.
 REQUEST_TIMEOUT_SECONDS = 60
