@@ -6,7 +6,7 @@
 |---|---|---|---|---|
 | A | _to fill_ | _to fill_ | Asset Performance Index (API) | XGBoost regression |
 | B | _to fill_ | _to fill_ | Market Risk Index (MRI) | LightGBM regression |
-| C | _to fill_ | _to fill_ | Trend Category (TC) | XGBoost classification |
+| C | Lavil Saldanha |26036727 | Trend Category (TC) | XGBoost classification |
 | D | Vedang Gosavi | 26059271 | Trading Opportunity Rating (TOR) | LightGBM classification |
 
 Deployed app: _Streamlit Community Cloud URL to add_
